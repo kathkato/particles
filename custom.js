@@ -43,7 +43,7 @@ function init() {
   }
 
   renderer = new THREE.CanvasRenderer();
-  renderer.setClearColor( 0xffffff, 0.0 );
+  renderer.setClearColor( 0xffffff );
   renderer.setPixelRatio( window.devicePixelRatio );
   renderer.setSize( window.innerWidth, window.innerHeight );
   container.appendChild( renderer.domElement );
@@ -91,7 +91,7 @@ function animate() {
 
 function render() {
   camera.position.x += ( mouseX - camera.position.x ) * 0.05;
-  camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+  camera.position.y += ( mouseY - camera.position.y ) * 0.05;
   camera.lookAt( scene.position );
 
   var currentSeconds = Date.now();
